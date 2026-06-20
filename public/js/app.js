@@ -43,6 +43,16 @@ const searchClear = $('searchClear');
 const esc = s => (s == null ? '' : String(s))
   .replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
+// 简单 hash（与 Python md5 不需要一致，只需唯一稳定）
+function hashUid(s) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) {
+    h = ((h << 5) + h) + s.charCodeAt(i);
+    h = h & h;
+  }
+  return 'u' + (h >>> 0).toString(36);
+}
+
 const uniq = arr => [...new Set(arr.filter(Boolean))].sort();
 const countBy = arr => {
   const o = {};
@@ -107,7 +117,11 @@ async function loadData() {
     '顺德': '佛山', '顺德区': '佛山', '南海': '佛山', '南海区': '佛山',
     '三水': '佛山', '三水区': '佛山', '高明': '佛山', '高明区': '佛山',
   };
-  DATA.forEach(e => { e.city = CITY_NORM[e.city] || e.city || ''; });
+  DATA.forEach(e => {
+    e.city = CITY_NORM[e.city] || e.city || '';
+    // 计算 uid（events.json 中没有此字段）
+    if (!e.uid) e.uid = hashUid((e.url || '') + '|' + (e.title || ''));
+  });
   buildChips();
   buildStats();
   invalidate();
@@ -238,6 +252,7 @@ function invalidate() {
   rendered = 0;
   statusSectionCount = countBy(filtered.map(e => e.status || 'unknown'));
   container.innerHTML = '';
+  container.className = viewMode === 'list' ? 'list' : 'grid';
   container.dataset.lastStatus = '';
   renderMore();
 }
@@ -285,7 +300,6 @@ function renderMore() {
 
 function renderCard(e) {
   const poster = e.poster_local || e.poster || '';
-  const bg = poster ? `style="background-image:url('${esc(poster)}')"` : '';
   const st = e.status || 'unknown';
   const stBadge = STATUS_LABELS[st]
     ? `<span class="badge status-${st}">${STATUS_ICONS[st]}</span>` : '';
@@ -302,8 +316,13 @@ function renderCard(e) {
     ? `${esc(e.start_time)}${e.end_time && e.end_time !== e.start_time ? ' → ' + esc(e.end_time) : ''}`
     : (e.raw_time ? esc(e.raw_time) : '');
 
+  const posterImg = poster
+    ? `<img src="${esc(poster)}" alt="${esc(e.title)}" loading="lazy" onerror="this.classList.add('broken')">`
+    : '';
+
   return `<div class="card ${st}" data-uid="${esc(e.uid)}" style="animation-delay:${Math.min((rendered % PAGE_SIZE) * 20, 400)}ms">
-    <div class="card-poster" ${bg}>
+    <div class="card-poster">
+      ${posterImg}
       <div class="card-badges">
         <div class="badge-group left">
           ${e.category ? `<span class="badge cat">${esc(catIcon)} ${esc(e.category)}</span>` : ''}
@@ -347,7 +366,20 @@ function openModal(uid) {
   const e = DATA.find(x => x.uid === uid);
   if (!e) return;
   const poster = e.poster_local || e.poster || '';
-  $('modalPoster').style.backgroundImage = poster ? `url('${esc(poster)}')` : 'none';
+  const posterEl = $('modalPoster');
+  // 清除旧 img
+  posterEl.querySelectorAll('img').forEach(i => i.remove());
+  posterEl.style.backgroundImage = '';
+  if (poster) {
+    const img = document.createElement('img');
+    img.src = poster;
+    img.alt = e.title || '';
+    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;';
+    img.onerror = () => { img.remove(); posterEl.style.background = 'var(--brand-soft)'; };
+    posterEl.appendChild(img);
+  } else {
+    posterEl.style.background = 'var(--brand-soft)';
+  }
   const st = e.status || 'unknown';
   const timeStr = e.start_time
     ? `${esc(e.start_time)}${e.end_time && e.end_time !== e.start_time ? ' → ' + esc(e.end_time) : ''}`
@@ -389,7 +421,7 @@ function openModal(uid) {
     </div>
     ${e.description ? `<div class="modal-desc">${esc(e.description)}</div>` : ''}
     <div class="modal-actions">
-      <a class="btn-primary" href="${esc(e.url)}" target="_blank" rel="noopener">🔗 查看原页面 →</a>
+      ${e.url ? `<a class="btn-primary" href="${esc(e.url)}" target="_blank" rel="noopener">🔗 查看原页面 →</a>` : '<span class="btn-primary" style="opacity:0.5;cursor:default">🔗 暂无原页面链接</span>'}
     </div>
   `;
   $('modalOverlay').classList.add('show');
@@ -460,13 +492,16 @@ document.querySelectorAll('.view-btn').forEach(btn => {
     document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     viewMode = btn.dataset.view;
-    container.className = viewMode === 'list' ? 'list' : '';
-    container.querySelectorAll('.card').forEach(c => c.style.animation = 'none');
+    container.className = viewMode === 'list' ? 'list' : 'grid';
   });
 });
 
 $('filterToggle').addEventListener('click', () => {
-  $('filterGrid').classList.toggle('show');
+  const fg = $('filterGrid');
+  const btn = $('filterToggle');
+  fg.classList.toggle('show');
+  btn.classList.toggle('active');
+  btn.textContent = fg.classList.contains('show') ? '✕ 收起' : '☰ 筛选';
 });
 
 $('themeToggle').addEventListener('click', toggleTheme);
