@@ -1,3 +1,8 @@
 data/posters/
-c/posters/
 public/posters/
+public/data/
+data_backup_*/
+.firebase/
+*.log
+__pycache__/
+*.pyc

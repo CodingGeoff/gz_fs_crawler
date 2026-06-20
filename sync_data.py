@@ -95,6 +95,11 @@ def main():
 
     merged = merge_events(old_events, new_events)
 
+    # 规范化 poster_local 路径（Windows 反斜杠 → 正斜杠，URL 友好）
+    for e in merged:
+        if e.get("poster_local"):
+            e["poster_local"] = e["poster_local"].replace("\\", "/")
+
     PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
     out_path = PUBLIC_DATA / "events.json"
     out_path.write_text(json.dumps(merged, ensure_ascii=False, separators=(",", ":")),
