@@ -3,38 +3,6 @@
     "source": "gdg_community",
     "source_name": "GDG·Google开发者社区",
     "category": "讲座沙龙",
-    "title": "2026 Google Gemma4 ：开发者大赛半决赛深圳站",
-    "url": "https://gdg.community.dev/events/details/google-gdg-shenzhen-presents-2026-google-gemma4-kai-fa-zhe-da-sai-ban-jue-sai-shen-zhen-zhan/",
-    "city": "深圳",
-    "district": "",
-    "venue": "GDG 深圳",
-    "address": "深圳",
-    "start_time": "2026-06-13 13:30",
-    "end_time": "",
-    "raw_time": "2026-06-13T05:30:00Z",
-    "price": "免费",
-    "price_min": 0.0,
-    "price_max": 0.0,
-    "is_free": true,
-    "poster": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG_Bevy_DefaultEventThumbnail_2_va1kAS9.png",
-    "poster_local": "posters/gdg_community_92ddeecd11f2.png",
-    "tags": [
-      "Free registration"
-    ],
-    "organizer": "GDG 深圳",
-    "description": "Gemma4 开发者大赛半决赛上海站亲爱的开发者们，大家好！Gemma 4 开发者大赛自启动以来，收到了全国开发者的热烈响应，无数热爱技术的伙伴奔赴这场AI盛宴，在交流组队、深耕创作的路上留下了许多温暖又热血的瞬间。目前报名通道已正式截止 GDE 王玉成 Topic: Gemma 4 for developer",
-    "extra": {
-      "chapter": "gdg-shenzhen",
-      "event_type": "Free registration"
-    },
-    "crawled_at": "2026-06-05T01:20:54",
-    "status": "upcoming",
-    "sort_key": "2_2026-06-13 13:30"
-  },
-  {
-    "source": "gdg_community",
-    "source_name": "GDG·Google开发者社区",
-    "category": "讲座沙龙",
     "title": "Chromium+APISIX GDG珠海 MeetUp",
     "url": "https://gdg.community.dev/events/details/google-zhuhai-gdg-presents-chromiumapisix-gdgzhu-hai-meetup/",
     "city": "珠海",
@@ -49,7 +17,7 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/event_banners/gdev-eccosystems-bevy-chapters-thumbnail_mx8HtgK.png",
-    "poster_local": "posters/gdg_community_9d6cdb78d925.png",
+    "poster_local": "",
     "tags": [
       "Speaker Session/ Tech Talk - Virtual"
     ],
@@ -59,7 +27,7 @@
       "chapter": "gdg-zhuhai",
       "event_type": "Speaker Session/ Tech Talk - Virtual"
     },
-    "crawled_at": "2026-06-05T01:20:55",
+    "crawled_at": "2026-06-21T04:53:03",
     "status": "archived",
     "sort_key": "9_2019-08-24"
   },
@@ -81,7 +49,7 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/event_banners/gdev-eccosystems-bevy-chapters-thumbnail_mx8HtgK.png",
-    "poster_local": "posters/gdg_community_a957b5ed625f.png",
+    "poster_local": "",
     "tags": [
       "Speaker Session/ Tech Talk - Virtual"
     ],
@@ -91,7 +59,7 @@
       "chapter": "gdg-zhuhai",
       "event_type": "Speaker Session/ Tech Talk - Virtual"
     },
-    "crawled_at": "2026-06-05T01:20:55",
+    "crawled_at": "2026-06-21T04:53:03",
     "status": "archived",
     "sort_key": "9_2019-11-16"
   },
@@ -113,7 +81,7 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/event_banners/gdev-eccosystems-bevy-chapters-thumbnail_jpDWjBm.png",
-    "poster_local": "posters/gdg_community_aaae289207f0.png",
+    "poster_local": "",
     "tags": [
       "Hands on workshop - Virtual"
     ],
@@ -123,7 +91,7 @@
       "chapter": "gdg-zhuhai",
       "event_type": "Hands on workshop - Virtual"
     },
-    "crawled_at": "2026-06-05T01:20:55",
+    "crawled_at": "2026-06-21T04:53:03",
     "status": "archived",
     "sort_key": "9_2020-04-18"
   },
@@ -145,7 +113,7 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/200720%E9%99%A2%E7%94%9F%40apisix.png",
-    "poster_local": "posters/gdg_community_aa1dca9a1470.png",
+    "poster_local": "",
     "tags": [
       "Hands on workshop - Virtual"
     ],
@@ -155,7 +123,7 @@
       "chapter": "gdg-zhuhai",
       "event_type": "Hands on workshop - Virtual"
     },
-    "crawled_at": "2026-06-05T01:20:55",
+    "crawled_at": "2026-06-21T04:53:03",
     "status": "archived",
     "sort_key": "9_2020-07-25"
   },
@@ -187,7 +155,7 @@
       "chapter": "gdg-dongguan",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:56",
+    "crawled_at": "2026-06-21T04:53:04",
     "status": "archived",
     "sort_key": "9_2025-03-30"
   },
@@ -219,7 +187,7 @@
       "chapter": "gdg-guangzhou",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:53",
+    "crawled_at": "2026-06-21T04:53:00",
     "status": "archived",
     "sort_key": "9_2025-11-29"
   },
@@ -251,7 +219,7 @@
       "chapter": "gdg-dongguan",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:56",
+    "crawled_at": "2026-06-21T04:53:04",
     "status": "archived",
     "sort_key": "9_2025-12-07"
   },
@@ -283,7 +251,7 @@
       "chapter": "gdg-dongguan",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:56",
+    "crawled_at": "2026-06-21T04:53:04",
     "status": "archived",
     "sort_key": "9_2025-12-21"
   },
@@ -315,7 +283,7 @@
       "chapter": "gdg-guangzhou",
       "event_type": "Paid registration"
     },
-    "crawled_at": "2026-06-05T01:20:53",
+    "crawled_at": "2026-06-21T04:53:00",
     "status": "archived",
     "sort_key": "9_2026-03-16"
   },
@@ -347,7 +315,7 @@
       "chapter": "gdg-hong-kong",
       "event_type": "Speaker Session / Tech Talk"
     },
-    "crawled_at": "2026-06-05T01:20:57",
+    "crawled_at": "2026-06-21T04:53:07",
     "status": "archived",
     "sort_key": "9_2026-03-18"
   },
@@ -379,7 +347,7 @@
       "chapter": "gdg-guangzhou",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:53",
+    "crawled_at": "2026-06-21T04:53:00",
     "status": "archived",
     "sort_key": "9_2026-03-21"
   },
@@ -411,7 +379,7 @@
       "chapter": "gdg-hong-kong",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:57",
+    "crawled_at": "2026-06-21T04:53:07",
     "status": "archived",
     "sort_key": "9_2026-04-11"
   },
@@ -443,41 +411,9 @@
       "chapter": "gdg-dongguan",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:56",
+    "crawled_at": "2026-06-21T04:53:04",
     "status": "archived",
     "sort_key": "9_2026-04-19"
-  },
-  {
-    "source": "gdg_community",
-    "source_name": "GDG·Google开发者社区",
-    "category": "讲座沙龙",
-    "title": "Build with Gemma 4 - Dive into the Future",
-    "url": "https://gdg.community.dev/events/details/google-gdg-shenzhen-presents-build-with-gemma-4-dive-into-the-future/",
-    "city": "深圳",
-    "district": "",
-    "venue": "GDG 深圳",
-    "address": "深圳",
-    "start_time": "2026-04-25 13:00",
-    "end_time": "",
-    "raw_time": "2026-04-25T05:00:00Z",
-    "price": "免费",
-    "price_min": 0.0,
-    "price_max": 0.0,
-    "is_free": true,
-    "poster": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG_Bevy_DefaultEventThumbnail_2_va1kAS9.png",
-    "poster_local": "",
-    "tags": [
-      "Free registration"
-    ],
-    "organizer": "GDG 深圳",
-    "description": "Join us on April 25th, 2026, for an exciting event focused on the cutting-edge AI capabilities of Gemma. We'll kick off ...",
-    "extra": {
-      "chapter": "gdg-shenzhen",
-      "event_type": "Free registration"
-    },
-    "crawled_at": "2026-06-05T01:20:54",
-    "status": "archived",
-    "sort_key": "9_2026-04-25"
   },
   {
     "source": "gdg_community",
@@ -507,7 +443,7 @@
       "chapter": "gdg-guangzhou",
       "event_type": "Conference"
     },
-    "crawled_at": "2026-06-05T01:20:53",
+    "crawled_at": "2026-06-21T04:53:00",
     "status": "archived",
     "sort_key": "9_2026-04-26"
   },
@@ -539,7 +475,7 @@
       "chapter": "gdg-hong-kong",
       "event_type": "Speaker Session / Tech Talk"
     },
-    "crawled_at": "2026-06-05T01:20:57",
+    "crawled_at": "2026-06-21T04:53:07",
     "status": "archived",
     "sort_key": "9_2026-04-29"
   },
@@ -571,7 +507,7 @@
       "chapter": "gdg-shenzhen",
       "event_type": "Free registration"
     },
-    "crawled_at": "2026-06-05T01:20:54",
+    "crawled_at": "2026-06-21T04:53:02",
     "status": "archived",
     "sort_key": "9_2026-05-14"
   },
@@ -603,7 +539,7 @@
       "chapter": "gdg-shenzhen",
       "event_type": "Free registration"
     },
-    "crawled_at": "2026-06-05T01:20:54",
+    "crawled_at": "2026-06-21T04:53:02",
     "status": "archived",
     "sort_key": "9_2026-05-23"
   },
@@ -635,7 +571,7 @@
       "chapter": "gdg-hong-kong",
       "event_type": "Speaker Session / Tech Talk"
     },
-    "crawled_at": "2026-06-05T01:20:57",
+    "crawled_at": "2026-06-21T04:53:07",
     "status": "archived",
     "sort_key": "9_2026-05-28"
   },
@@ -667,8 +603,40 @@
       "chapter": "gdg-shenzhen",
       "event_type": "Free registration"
     },
-    "crawled_at": "2026-06-05T01:20:54",
+    "crawled_at": "2026-06-21T04:53:02",
     "status": "archived",
     "sort_key": "9_2026-05-30"
+  },
+  {
+    "source": "gdg_community",
+    "source_name": "GDG·Google开发者社区",
+    "category": "讲座沙龙",
+    "title": "2026 Google Gemma4 ：开发者大赛半决赛深圳站",
+    "url": "https://gdg.community.dev/events/details/google-gdg-shenzhen-presents-2026-google-gemma4-kai-fa-zhe-da-sai-ban-jue-sai-shen-zhen-zhan/",
+    "city": "深圳",
+    "district": "",
+    "venue": "GDG 深圳",
+    "address": "深圳",
+    "start_time": "2026-06-13 13:30",
+    "end_time": "",
+    "raw_time": "2026-06-13T05:30:00Z",
+    "price": "免费",
+    "price_min": 0.0,
+    "price_max": 0.0,
+    "is_free": true,
+    "poster": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG_Bevy_DefaultEventThumbnail_2_va1kAS9.png",
+    "poster_local": "",
+    "tags": [
+      "Free registration"
+    ],
+    "organizer": "GDG 深圳",
+    "description": "Gemma4 开发者大赛半决赛上海站亲爱的开发者们，大家好！Gemma 4 开发者大赛自启动以来，收到了全国开发者的热烈响应，无数热爱技术的伙伴奔赴这场AI盛宴，在交流组队、深耕创作的路上留下了许多温暖又热血的瞬间。目前报名通道已正式截止 GDE 王玉成 Topic: Gemma 4 for developer",
+    "extra": {
+      "chapter": "gdg-shenzhen",
+      "event_type": "Free registration"
+    },
+    "crawled_at": "2026-06-21T04:53:02",
+    "status": "archived",
+    "sort_key": "9_2026-06-13"
   }
 ]

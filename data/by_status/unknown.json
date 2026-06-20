@@ -2,35 +2,6 @@
   {
     "source": "bendibao_gz",
     "source_name": "广州本地宝",
-    "category": "优惠羊毛",
-    "title": "2024喜茶多肉葡萄免单券领取入口（附流程）",
-    "url": "http://gz.bendibao.com/youhui/20240103/348191.shtm",
-    "city": "广州",
-    "district": "",
-    "venue": "",
-    "address": "",
-    "start_time": "241-03-20",
-    "end_time": "",
-    "raw_time": "0241/03/20",
-    "price": "",
-    "price_min": null,
-    "price_max": null,
-    "is_free": null,
-    "poster": "https://imgbdb4.bendibao.com/dazheimg/20241/03/2024103160945_95536.jpg",
-    "poster_local": "posters/bendibao_gz_f8e41ea6cf7f.jpg",
-    "tags": [],
-    "organizer": "",
-    "description": "【导语】： 1月2日-1月4日期间多肉葡萄赠饮券: 活动期间共10000张限自取可用,领取后 7 天有效，限多肉葡萄饮品可用。 【导语】： 1月2日-1月4日期间多肉葡萄赠饮券: 活动期间共10000张限自取可用,领取后 7 天有效，限多肉葡萄饮品可用。 ➤领券入口： https://imgbdb4.bendibao.com/gzbdb/youhui/20241/03/2024103154835_62942.png ➤ 领券流程： ➤ 使用方法： 使用场景 下单的商品在喜茶GO小程序菜单分类中方可使用该券； 使用喜茶GO小程序下单时，选择“门店自取”后可用； 在门店下单时，出示“会员码”给店员进行扫码后可用。 使用说明 不可与现金券,赠饮券,买赠券,折扣券,换购券同时使用不可与门店优惠共享； 运费不参与优惠券使用门槛计算，也不可使用优惠； 因每个门店的运营均有一定独立性或临时出现特殊情况，其余有关本券的使用限制需以门店现场公布或店员告知为准。 温馨提示:微信搜索公众号【广州本地宝】,关注后对话框回复【喜茶】获喜茶免单券+折扣券领券入口/领券流程，活动时间，使用要求，参与方式及后续活动等",
-    "extra": {
-      "published": "2024-01-03 16:07"
-    },
-    "crawled_at": "2026-06-05T01:20:23",
-    "status": "unknown",
-    "sort_key": "9999-99-99"
-  },
-  {
-    "source": "bendibao_gz",
-    "source_name": "广州本地宝",
     "category": "社交聚会",
     "title": "广州新晋打卡地标",
     "url": "https://gz.bendibao.com/tour/jingdianbangdan/609.shtml",
@@ -53,7 +24,7 @@
     "extra": {
       "published": ""
     },
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:10",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -82,7 +53,7 @@
     "extra": {
       "published": ""
     },
-    "crawled_at": "2026-06-05T01:20:39",
+    "crawled_at": "2026-06-21T04:52:12",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -111,7 +82,7 @@
     "extra": {
       "published": ""
     },
-    "crawled_at": "2026-06-05T01:20:27",
+    "crawled_at": "2026-06-21T04:52:12",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -140,7 +111,7 @@
     "extra": {
       "published": ""
     },
-    "crawled_at": "2026-06-05T01:20:29",
+    "crawled_at": "2026-06-21T04:52:16",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -169,7 +140,7 @@
     "extra": {
       "published": ""
     },
-    "crawled_at": "2026-06-05T01:20:28",
+    "crawled_at": "2026-06-21T04:52:12",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -198,7 +169,34 @@
     "extra": {
       "published": ""
     },
-    "crawled_at": "2026-06-05T01:20:35",
+    "crawled_at": "2026-06-21T04:52:20",
+    "status": "unknown",
+    "sort_key": "9999-99-99"
+  },
+  {
+    "source": "gdmoa",
+    "source_name": "广东美术馆",
+    "category": "展览",
+    "title": "本馆 | 其命惟新——广东美术百年陈列展(1900-1978)",
+    "url": "https://www.gdmoa.org/Exhibition/Current/202606/t20260609_18356.shtml",
+    "city": "广州",
+    "district": "荔湾",
+    "venue": "广东美术馆",
+    "address": "广东美术馆本馆（二沙岛） 5、6、8、9、10、11、12号厅",
+    "start_time": "",
+    "end_time": "",
+    "raw_time": " - ",
+    "price": "免费",
+    "price_min": 0.0,
+    "price_max": 0.0,
+    "is_free": true,
+    "poster": "http://www.gdmoa.org/Exhibition/Current/202606/W020260609608684368122.jpg",
+    "poster_local": "",
+    "tags": [],
+    "organizer": "",
+    "description": "",
+    "extra": {},
+    "crawled_at": "2026-06-21T04:52:19",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -220,12 +218,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_a4c33a6abf56.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:32",
+    "crawled_at": "2026-06-21T04:52:21",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -247,12 +245,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_c11dc9509221.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:37",
+    "crawled_at": "2026-06-21T04:52:26",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -274,12 +272,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_78e9fd897aa2.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:38",
+    "crawled_at": "2026-06-21T04:52:27",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -306,7 +304,7 @@
     "organizer": "",
     "description": "物外烟霞——20世纪中国风景画探索研究展",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:27",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -314,8 +312,8 @@
     "source": "hxn_art",
     "source_name": "何香凝美术馆",
     "category": "展览",
-    "title": "有海水的地方——第七届海外华人艺术家文化精品展苏州巡展",
-    "url": "http://hxnart.org.cn/cn/category/exhibition-list/detail!20260429",
+    "title": "木棉花开——当代岭南山水画名家邀请展",
+    "url": "http://hxnart.org.cn/cn/category/exhibition-list/detail!20260430",
     "city": "深圳",
     "district": "",
     "venue": "何香凝美术馆",
@@ -331,9 +329,9 @@
     "poster_local": "",
     "tags": [],
     "organizer": "",
-    "description": "有海水的地方——第七届海外华人艺术家文化精品展苏州巡展",
+    "description": "木棉花开——当代岭南山水画名家邀请展",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:27",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -360,7 +358,7 @@
     "organizer": "",
     "description": "画就丹青凭寄意：何香凝艺术精品展（新加坡）",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:27",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "unknown",
     "sort_key": "9999-99-99"
   }

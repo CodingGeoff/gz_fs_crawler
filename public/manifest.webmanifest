@@ -1,0 +1,12 @@
+{
+  "name": "广佛活动雷达",
+  "short_name": "广佛雷达",
+  "description": "广州佛山大学生活动聚合雷达",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#6366f1",
+  "icons": [
+    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

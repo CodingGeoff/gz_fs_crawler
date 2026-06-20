@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6366f1">
+<meta name="description" content="广州佛山大学生活动聚合雷达 - 讲座 / 展览 / 演出 / 公益课 / 招聘 / 优惠 一站搞定">
+<title>广佛活动雷达 · 广州佛山大学生活动聚合</title>
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">🛰️</div>
+      <div>
+        <span class="brand-text">广佛活动雷达</span>
+        <div class="brand-sub">广州 · 佛山 大学生活动聚合</div>
+      </div>
+    </div>
+    <div class="header-stats" id="headerStats"></div>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-card">
+    <h1 class="hero-title">📡 广佛活动雷达</h1>
+    <p class="hero-sub">聚合 22+ 数据源 · 讲座 / 展览 / 演出 / 公益课 / 招聘 / 优惠 / 美食 · 每日更新</p>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</section>
+
+<!-- ============ Toolbar ============ -->
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <div class="search-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="search" id="search" placeholder="搜索标题 / 地址 / 主办方 / 学校..." autocomplete="off">
+        <button class="search-clear" id="searchClear" aria-label="清空">✕</button>
+      </div>
+      <select class="sort-select" id="sortSelect">
+        <option value="default">默认排序</option>
+        <option value="time-asc">时间 ↑ (近→远)</option>
+        <option value="time-desc">时间 ↓ (远→近)</option>
+        <option value="price-asc">价格 ↑ (免费优先)</option>
+        <option value="title">标题 A-Z</option>
+      </select>
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="grid" aria-label="网格视图">▦</button>
+        <button class="view-btn" data-view="list" aria-label="列表视图">☰</button>
+      </div>
+    </div>
+    <button class="filter-toggle" id="filterToggle">☰ 筛选</button>
+    <div class="filter-grid" id="filterGrid">
+      <div class="filter-row">
+        <span class="filter-label">状态</span>
+        <div class="chips" id="chipsStatus"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">分类</span>
+        <div class="chips" id="chipsCat"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">城市</span>
+        <div class="chips" id="chipsCity"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">来源</span>
+        <div class="chips" id="chipsSrc"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">价格</span>
+        <div class="chips" id="chipsPrice"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Main ============ -->
+<main class="main">
+  <div id="container">
+    <div class="loading">
+      <div class="spinner"></div>
+      <div>📡 正在加载活动数据…</div>
+    </div>
+  </div>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div>广佛活动雷达 · 数据来源于各公开站点 · 仅供学习交流</div>
+  <div style="margin-top:4px">共 <b id="footTotal">0</b> 条活动 · 最近更新 <span id="footUpdated">-</span></div>
+</footer>
+
+<!-- ============ FAB ============ -->
+<button class="fab" id="fab" aria-label="回到顶部">↑</button>
+
+<!-- ============ Modal ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-poster" id="modalPoster">
+      <button class="modal-close" id="modalClose" aria-label="关闭">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

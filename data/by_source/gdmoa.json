@@ -17,12 +17,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_8facfb0d5cd1.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:38",
+    "crawled_at": "2026-06-21T04:52:26",
     "status": "upcoming",
     "sort_key": "2_2026-08-13 02:30"
   },
@@ -44,14 +44,41 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_3aa3b9d73784.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:43",
+    "crawled_at": "2026-06-21T04:52:32",
     "status": "upcoming",
     "sort_key": "2_2026-11-18 14:30"
+  },
+  {
+    "source": "gdmoa",
+    "source_name": "广东美术馆",
+    "category": "展览",
+    "title": "本馆 | 其命惟新——广东美术百年陈列展(1900-1978)",
+    "url": "https://www.gdmoa.org/Exhibition/Current/202606/t20260609_18356.shtml",
+    "city": "广州",
+    "district": "荔湾",
+    "venue": "广东美术馆",
+    "address": "广东美术馆本馆（二沙岛） 5、6、8、9、10、11、12号厅",
+    "start_time": "",
+    "end_time": "",
+    "raw_time": " - ",
+    "price": "免费",
+    "price_min": 0.0,
+    "price_max": 0.0,
+    "is_free": true,
+    "poster": "http://www.gdmoa.org/Exhibition/Current/202606/W020260609608684368122.jpg",
+    "poster_local": "",
+    "tags": [],
+    "organizer": "",
+    "description": "",
+    "extra": {},
+    "crawled_at": "2026-06-21T04:52:19",
+    "status": "unknown",
+    "sort_key": "9999-99-99"
   },
   {
     "source": "gdmoa",
@@ -71,12 +98,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_a4c33a6abf56.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:32",
+    "crawled_at": "2026-06-21T04:52:21",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -98,12 +125,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_c11dc9509221.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:37",
+    "crawled_at": "2026-06-21T04:52:26",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -125,12 +152,12 @@
     "price_max": 0.0,
     "is_free": true,
     "poster": "https://www.gdmoa.org/whlm/ggjyjdt/202412/W020250109062175048716.png",
-    "poster_local": "posters/gdmoa_78e9fd897aa2.png",
+    "poster_local": "",
     "tags": [],
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:38",
+    "crawled_at": "2026-06-21T04:52:27",
     "status": "unknown",
     "sort_key": "9999-99-99"
   },
@@ -157,7 +184,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:32",
+    "crawled_at": "2026-06-21T04:52:21",
     "status": "archived",
     "sort_key": "9_2023-01-10"
   },
@@ -184,7 +211,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:37",
+    "crawled_at": "2026-06-21T04:52:26",
     "status": "archived",
     "sort_key": "9_2023-05-17"
   },
@@ -211,7 +238,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:43",
+    "crawled_at": "2026-06-21T04:52:32",
     "status": "archived",
     "sort_key": "9_2023-08-06"
   },
@@ -238,7 +265,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:38",
+    "crawled_at": "2026-06-21T04:52:26",
     "status": "archived",
     "sort_key": "9_2023-08-12"
   },
@@ -265,7 +292,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:43",
+    "crawled_at": "2026-06-21T04:52:32",
     "status": "archived",
     "sort_key": "9_2023-08-29"
   },
@@ -292,7 +319,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:43",
+    "crawled_at": "2026-06-21T04:52:32",
     "status": "archived",
     "sort_key": "9_2023-09-09"
   },
@@ -319,7 +346,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:37",
+    "crawled_at": "2026-06-21T04:52:26",
     "status": "archived",
     "sort_key": "9_2023-09-23"
   },
@@ -346,7 +373,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:37",
+    "crawled_at": "2026-06-21T04:52:25",
     "status": "archived",
     "sort_key": "9_2023-12-17"
   },
@@ -373,7 +400,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:31",
     "status": "archived",
     "sort_key": "9_2024-01-16"
   },
@@ -400,7 +427,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:31",
     "status": "archived",
     "sort_key": "9_2024-02-10"
   },
@@ -427,7 +454,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:36",
+    "crawled_at": "2026-06-21T04:52:25",
     "status": "archived",
     "sort_key": "9_2024-03-02"
   },
@@ -454,7 +481,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:36",
+    "crawled_at": "2026-06-21T04:52:25",
     "status": "archived",
     "sort_key": "9_2024-04-13"
   },
@@ -481,7 +508,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:36",
+    "crawled_at": "2026-06-21T04:52:25",
     "status": "archived",
     "sort_key": "9_2024-04-29"
   },
@@ -508,7 +535,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:19",
     "status": "archived",
     "sort_key": "9_2024-05-01"
   },
@@ -535,7 +562,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:20",
     "status": "archived",
     "sort_key": "9_2024-05-01"
   },
@@ -562,7 +589,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:31",
     "status": "archived",
     "sort_key": "9_2024-05-01"
   },
@@ -589,7 +616,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:31",
     "status": "archived",
     "sort_key": "9_2024-05-18"
   },
@@ -616,7 +643,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:36",
+    "crawled_at": "2026-06-21T04:52:25",
     "status": "archived",
     "sort_key": "9_2024-06-22"
   },
@@ -643,7 +670,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:36",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "archived",
     "sort_key": "9_2024-07-20"
   },
@@ -670,7 +697,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:31",
     "status": "archived",
     "sort_key": "9_2024-07-27"
   },
@@ -697,7 +724,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:36",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "archived",
     "sort_key": "9_2024-07-28"
   },
@@ -724,7 +751,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:31",
     "status": "archived",
     "sort_key": "9_2024-09-16"
   },
@@ -751,7 +778,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:20",
     "status": "archived",
     "sort_key": "9_2024-09-28"
   },
@@ -778,7 +805,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:41",
+    "crawled_at": "2026-06-21T04:52:30",
     "status": "archived",
     "sort_key": "9_2024-10-01"
   },
@@ -805,7 +832,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:41",
+    "crawled_at": "2026-06-21T04:52:30",
     "status": "archived",
     "sort_key": "9_2024-10-01"
   },
@@ -832,7 +859,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:20",
     "status": "archived",
     "sort_key": "9_2024-10-15"
   },
@@ -859,7 +886,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:32",
+    "crawled_at": "2026-06-21T04:52:20",
     "status": "archived",
     "sort_key": "9_2024-10-17"
   },
@@ -886,7 +913,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:20",
     "status": "archived",
     "sort_key": "9_2024-11-19"
   },
@@ -913,7 +940,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:42",
+    "crawled_at": "2026-06-21T04:52:30",
     "status": "archived",
     "sort_key": "9_2025-01-01"
   },
@@ -940,7 +967,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:35",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "archived",
     "sort_key": "9_2025-03-15"
   },
@@ -967,7 +994,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:41",
+    "crawled_at": "2026-06-21T04:52:30",
     "status": "archived",
     "sort_key": "9_2025-03-16"
   },
@@ -994,7 +1021,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:35",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "archived",
     "sort_key": "9_2025-04-12"
   },
@@ -1021,7 +1048,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:40",
+    "crawled_at": "2026-06-21T04:52:29",
     "status": "archived",
     "sort_key": "9_2025-04-12"
   },
@@ -1048,7 +1075,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:35",
+    "crawled_at": "2026-06-21T04:52:24",
     "status": "archived",
     "sort_key": "9_2025-04-15"
   },
@@ -1075,7 +1102,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:41",
+    "crawled_at": "2026-06-21T04:52:29",
     "status": "archived",
     "sort_key": "9_2025-04-15"
   },
@@ -1102,7 +1129,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:41",
+    "crawled_at": "2026-06-21T04:52:30",
     "status": "archived",
     "sort_key": "9_2025-05-02"
   },
@@ -1129,7 +1156,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:35",
+    "crawled_at": "2026-06-21T04:52:23",
     "status": "archived",
     "sort_key": "9_2025-05-17"
   },
@@ -1156,7 +1183,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:35",
+    "crawled_at": "2026-06-21T04:52:23",
     "status": "archived",
     "sort_key": "9_2025-05-31"
   },
@@ -1183,7 +1210,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:40",
+    "crawled_at": "2026-06-21T04:52:29",
     "status": "archived",
     "sort_key": "9_2025-05-31"
   },
@@ -1210,7 +1237,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:40",
+    "crawled_at": "2026-06-21T04:52:29",
     "status": "archived",
     "sort_key": "9_2025-07-10"
   },
@@ -1237,7 +1264,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:34",
+    "crawled_at": "2026-06-21T04:52:23",
     "status": "archived",
     "sort_key": "9_2025-07-20"
   },
@@ -1264,7 +1291,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:40",
+    "crawled_at": "2026-06-21T04:52:29",
     "status": "archived",
     "sort_key": "9_2025-08-23"
   },
@@ -1291,7 +1318,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:39",
+    "crawled_at": "2026-06-21T04:52:28",
     "status": "archived",
     "sort_key": "9_2025-08-29"
   },
@@ -1318,7 +1345,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:34",
+    "crawled_at": "2026-06-21T04:52:23",
     "status": "archived",
     "sort_key": "9_2025-10-07"
   },
@@ -1345,7 +1372,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:40",
+    "crawled_at": "2026-06-21T04:52:28",
     "status": "archived",
     "sort_key": "9_2025-10-07"
   },
@@ -1372,7 +1399,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:34",
+    "crawled_at": "2026-06-21T04:52:23",
     "status": "archived",
     "sort_key": "9_2025-10-19"
   },
@@ -1399,7 +1426,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:34",
+    "crawled_at": "2026-06-21T04:52:22",
     "status": "archived",
     "sort_key": "9_2025-11-02"
   },
@@ -1426,7 +1453,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:33",
+    "crawled_at": "2026-06-21T04:52:22",
     "status": "archived",
     "sort_key": "9_2025-11-16"
   },
@@ -1453,7 +1480,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:34",
+    "crawled_at": "2026-06-21T04:52:22",
     "status": "archived",
     "sort_key": "9_2025-11-19"
   },
@@ -1480,7 +1507,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:40",
+    "crawled_at": "2026-06-21T04:52:28",
     "status": "archived",
     "sort_key": "9_2025-11-29"
   },
@@ -1507,7 +1534,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:33",
+    "crawled_at": "2026-06-21T04:52:22",
     "status": "archived",
     "sort_key": "9_2025-11-30"
   },
@@ -1534,7 +1561,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:33",
+    "crawled_at": "2026-06-21T04:52:22",
     "status": "archived",
     "sort_key": "9_2025-12-14"
   },
@@ -1561,7 +1588,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:30",
+    "crawled_at": "2026-06-21T04:52:18",
     "status": "archived",
     "sort_key": "9_2025-12-23"
   },
@@ -1588,7 +1615,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:39",
+    "crawled_at": "2026-06-21T04:52:27",
     "status": "archived",
     "sort_key": "9_2025-12-25"
   },
@@ -1615,7 +1642,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:31",
+    "crawled_at": "2026-06-21T04:52:18",
     "status": "archived",
     "sort_key": "9_2026-01-01"
   },
@@ -1642,7 +1669,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:39",
+    "crawled_at": "2026-06-21T04:52:28",
     "status": "archived",
     "sort_key": "9_2026-01-01"
   },
@@ -1669,7 +1696,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:33",
+    "crawled_at": "2026-06-21T04:52:22",
     "status": "archived",
     "sort_key": "9_2026-01-02"
   },
@@ -1696,7 +1723,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:33",
+    "crawled_at": "2026-06-21T04:52:21",
     "status": "archived",
     "sort_key": "9_2026-01-31"
   },
@@ -1723,7 +1750,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:39",
+    "crawled_at": "2026-06-21T04:52:28",
     "status": "archived",
     "sort_key": "9_2026-02-08"
   },
@@ -1750,7 +1777,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:39",
+    "crawled_at": "2026-06-21T04:52:27",
     "status": "archived",
     "sort_key": "9_2026-02-18"
   },
@@ -1777,7 +1804,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:38",
+    "crawled_at": "2026-06-21T04:52:27",
     "status": "archived",
     "sort_key": "9_2026-03-25"
   },
@@ -1804,7 +1831,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:30",
+    "crawled_at": "2026-06-21T04:52:18",
     "status": "archived",
     "sort_key": "9_2026-03-27"
   },
@@ -1831,7 +1858,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:30",
+    "crawled_at": "2026-06-21T04:52:18",
     "status": "archived",
     "sort_key": "9_2026-04-17"
   },
@@ -1858,7 +1885,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:30",
+    "crawled_at": "2026-06-21T04:52:18",
     "status": "archived",
     "sort_key": "9_2026-04-21"
   },
@@ -1885,7 +1912,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:29",
+    "crawled_at": "2026-06-21T04:52:17",
     "status": "archived",
     "sort_key": "9_2026-04-23"
   },
@@ -1912,7 +1939,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:28",
+    "crawled_at": "2026-06-21T04:52:17",
     "status": "archived",
     "sort_key": "9_2026-04-24"
   },
@@ -1939,7 +1966,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:32",
+    "crawled_at": "2026-06-21T04:52:21",
     "status": "archived",
     "sort_key": "9_2026-05-01"
   },
@@ -1966,7 +1993,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:32",
+    "crawled_at": "2026-06-21T04:52:21",
     "status": "archived",
     "sort_key": "9_2026-05-10"
   },
@@ -1993,7 +2020,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:38",
+    "crawled_at": "2026-06-21T04:52:27",
     "status": "archived",
     "sort_key": "9_2026-05-10"
   },
@@ -2020,7 +2047,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:29",
+    "crawled_at": "2026-06-21T04:52:17",
     "status": "archived",
     "sort_key": "9_2026-05-16"
   },
@@ -2047,7 +2074,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:27",
+    "crawled_at": "2026-06-21T04:52:17",
     "status": "archived",
     "sort_key": "9_2026-05-28"
   },
@@ -2074,7 +2101,7 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:29",
+    "crawled_at": "2026-06-21T04:52:17",
     "status": "archived",
     "sort_key": "9_2026-05-29"
   },
@@ -2101,8 +2128,62 @@
     "organizer": "",
     "description": "",
     "extra": {},
-    "crawled_at": "2026-06-05T01:20:29",
+    "crawled_at": "2026-06-21T04:52:16",
     "status": "archived",
     "sort_key": "9_2026-05-30"
+  },
+  {
+    "source": "gdmoa",
+    "source_name": "广东美术馆",
+    "category": "展览",
+    "title": "本馆 | \"其命惟新——广东美术百年陈列展\"暨名家个案研究“长风万里——关山月艺术大展”",
+    "url": "https://www.gdmoa.org/Exhibition/Current/202606/t20260609_18355.shtml",
+    "city": "广州",
+    "district": "荔湾",
+    "venue": "广东美术馆",
+    "address": "广东美术馆本馆（二沙岛）一楼1、2、3、4号厅",
+    "start_time": "2026-06-09",
+    "end_time": "2026-08-19",
+    "raw_time": "2026-06-09 -  2026-08-19",
+    "price": "免费",
+    "price_min": 0.0,
+    "price_max": 0.0,
+    "is_free": true,
+    "poster": "http://www.gdmoa.org/Exhibition/Current/202606/W020260609598175133988.jpg",
+    "poster_local": "",
+    "tags": [],
+    "organizer": "",
+    "description": "",
+    "extra": {},
+    "crawled_at": "2026-06-21T04:52:20",
+    "status": "archived",
+    "sort_key": "9_2026-06-09"
+  },
+  {
+    "source": "gdmoa",
+    "source_name": "广东美术馆",
+    "category": "展览",
+    "title": "本馆 | 无界：广东美术馆青年艺术家学术提名展回顾",
+    "url": "https://www.gdmoa.org/Exhibition/Current/202606/t20260609_18354.shtml",
+    "city": "广州",
+    "district": "荔湾",
+    "venue": "广东美术馆",
+    "address": "广东美术馆本馆（二沙岛）二楼 7号展厅",
+    "start_time": "2026-06-09",
+    "end_time": "2026-09-09",
+    "raw_time": "2026-06-09 -  2026-09-09",
+    "price": "免费",
+    "price_min": 0.0,
+    "price_max": 0.0,
+    "is_free": true,
+    "poster": "http://www.gdmoa.org/Exhibition/Current/202606/W020260609584276921493.jpg",
+    "poster_local": "",
+    "tags": [],
+    "organizer": "",
+    "description": "",
+    "extra": {},
+    "crawled_at": "2026-06-21T04:52:19",
+    "status": "archived",
+    "sort_key": "9_2026-06-09"
   }
 ]
