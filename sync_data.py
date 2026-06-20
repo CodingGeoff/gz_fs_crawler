@@ -95,6 +95,24 @@ def main():
 
     merged = merge_events(old_events, new_events)
 
+    # 修正港澳误标（eventbrite/meetup 按 URL slug 赋 city 的问题）
+    from crawler.utils import detect_hk_macau, extract_city
+    fixed = 0
+    for e in merged:
+        text = " ".join(filter(None, [e.get("venue", ""), e.get("address", ""),
+                                        e.get("organizer", "")]))
+        real = detect_hk_macau(text)
+        if real and e.get("city") != real:
+            e["city"] = real
+            fixed += 1
+        elif not real and e.get("city") in ("香港", "澳门"):
+            rc = extract_city(e.get("address", "") + " " + e.get("venue", ""))
+            if rc and rc not in ("香港", "澳门"):
+                e["city"] = rc
+                fixed += 1
+    if fixed:
+        print(f"  修正 {fixed} 条港澳误标")
+
     # 规范化 poster_local 路径（Windows 反斜杠 → 正斜杠，URL 友好）
     for e in merged:
         if e.get("poster_local"):

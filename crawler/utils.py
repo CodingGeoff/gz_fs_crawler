@@ -297,7 +297,8 @@ def clean(text: str) -> str:
 def extract_city(text: str) -> str:
     if not text:
         return ""
-    for c in ["广州", "佛山", "高明", "南海", "顺德", "禅城", "三水"]:
+    for c in ["广州", "佛山", "高明", "南海", "顺德", "禅城", "三水",
+              "深圳", "珠海", "东莞", "香港", "澳门"]:
         if c in text:
             return c
     return ""
@@ -312,7 +313,42 @@ CITY_ALIAS = {
     "顺德": "佛山", "顺德区": "佛山",
     "禅城": "佛山", "禅城区": "佛山",
     "三水": "佛山", "三水区": "佛山",
+    "深圳市": "深圳",
+    "珠海市": "珠海",
+    "东莞市": "东莞",
 }
+
+
+# 香港 / 澳门 关键字（用于校验实际举办地，防止 URL slug 误标）
+# 注意：只放无歧义的关键字，避免大陆地名误匹配（如"中环西路"≠香港中环）
+_HK_KEYWORDS = [
+    "hong kong", "hongkong", "香港",
+    # 香港地名（英文，无歧义）
+    "tsim sha tsui", "causeway bay", "north point", "mong kok",
+    "admiralty", "quarry bay", "kennedy town",
+    # 香港地名（中文，无歧义）
+    "尖沙咀", "铜锣湾", "北角", "旺角", "金钟",
+    "大屿山", "梅窝", "大窝口", "大窩口",
+]
+_MACAU_KEYWORDS = ["macau", "macao", "澳门", "路氹", "氹仔", "大三巴"]
+
+
+def detect_hk_macau(text: str) -> str:
+    """检测文本是否包含香港/澳门地点关键字。
+
+    返回 '香港' / '澳门' / ''（空表示未检测到）。
+    用于修正 eventbrite/meetup 等按 URL slug 赋 city 导致的误标。
+    """
+    if not text:
+        return ""
+    low = text.lower()
+    for kw in _MACAU_KEYWORDS:
+        if kw in low:
+            return "澳门"
+    for kw in _HK_KEYWORDS:
+        if kw in low:
+            return "香港"
+    return ""
 
 
 def normalize_city(city: str) -> str:

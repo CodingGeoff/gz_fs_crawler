@@ -22,7 +22,7 @@ from datetime import datetime
 from typing import Iterator
 
 from ..base import BaseAdapter, Event
-from ..utils import clean
+from ..utils import clean, detect_hk_macau
 
 
 CITIES = [
@@ -98,7 +98,23 @@ class MeetupCom(BaseAdapter):
 
                 # 在线/线下
                 is_online = e.get("isOnline") or e.get("eventType") == "ONLINE"
-                addr = "线上活动" if is_online else city
+
+                # 校验实际举办地：Meetup 的 cn--shenzhen/zhuhai 列表
+                # 会混入香港群组活动，按群组名 + venue 修正 city
+                venue_obj = e.get("venue") or {}
+                venue_name = clean(venue_obj.get("name", "")) if isinstance(venue_obj, dict) else ""
+                venue_addr = ""
+                if isinstance(venue_obj, dict):
+                    venue_addr = " ".join(filter(None, [
+                        venue_obj.get("address", ""),
+                        venue_obj.get("city", ""),
+                        venue_obj.get("country", ""),
+                    ]))
+                real_city = detect_hk_macau(org + " " + venue_name + " " + venue_addr)
+                if real_city:
+                    city = real_city
+
+                addr = "线上活动" if is_online else (venue_addr or venue_name or city)
 
                 # 费用：fee_settings
                 fee = e.get("feeSettings")

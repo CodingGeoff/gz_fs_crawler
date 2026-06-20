@@ -14,7 +14,7 @@ from datetime import datetime
 from typing import Iterator
 
 from ..base import BaseAdapter, Event
-from ..utils import clean, parse_time_range
+from ..utils import clean, parse_time_range, detect_hk_macau
 
 
 CITIES = [
@@ -121,6 +121,12 @@ class EventbriteGZ(BaseAdapter):
                 # 在线/线下
                 mode = e.get("eventAttendanceMode", "")
                 is_online = "Online" in mode
+
+                # 校验实际举办地：Eventbrite 的 china--shenzhen/zhuhai 列表
+                # 会混入大量香港/澳门活动，按 venue+address 修正 city
+                real_city = detect_hk_macau(venue + " " + addr)
+                if real_city:
+                    city = real_city
 
                 yield Event(
                     source=self.source,

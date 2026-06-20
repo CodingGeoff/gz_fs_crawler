@@ -551,6 +551,35 @@ input { font-family: inherit; }
 .card.archived { opacity: 0.62; }
 .card.archived:hover { opacity: 1; }
 
+/* ============ 仅今天 特殊高亮 ============ */
+.card.today-only {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, #f59e0b, #ef4444, #ec4899) border-box;
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2), 0 4px 16px -4px rgba(239, 68, 68, 0.3);
+  animation: fadeInUp 0.3s ease-out backwards, todayPulse 2.5s ease-in-out infinite;
+}
+.card.today-only:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.4), 0 12px 28px -6px rgba(239, 68, 68, 0.45);
+}
+@keyframes todayPulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2), 0 4px 16px -4px rgba(239, 68, 68, 0.3); }
+  50% { box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 6px 22px -4px rgba(239, 68, 68, 0.5); }
+}
+.badge.today-only-badge {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+  animation: badgeBlink 1.8s ease-in-out infinite;
+}
+@keyframes badgeBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
 .card-poster {
   width: 100%;
   padding-top: 42%;

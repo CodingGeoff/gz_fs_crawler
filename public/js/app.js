@@ -101,6 +101,65 @@ function relTime(s) {
   return Math.round(days / 30) + ' 个月后';
 }
 
+// ============ 智能排序：今天单日 > 短时长 > 早结束 ============
+function parseDate(s) {
+  if (!s) return null;
+  const d = new Date(s.replace(' ', 'T'));
+  return isNaN(d) ? null : d;
+}
+
+function isSameDay(d1, d2) {
+  return d1 && d2 && d1.getFullYear() === d2.getFullYear() &&
+         d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
+}
+
+/** 判断是否"仅今天"举办的单日活动（start 和 end 同一天且是今天） */
+function isTodayOnly(e) {
+  if ((e.status || 'unknown') !== 'today') return false;
+  const sDt = parseDate(e.start_time);
+  if (!sDt) return false;
+  const now = new Date();
+  if (!isSameDay(sDt, now)) return false; // 开始时间不是今天
+  // 没有 end_time 或 end 和 start 同一天 → 单日活动
+  if (!e.end_time) return true;
+  const eDt = parseDate(e.end_time);
+  if (!eDt) return true;
+  return isSameDay(sDt, eDt);
+}
+
+/** 活动时长（小时），越短权重越高 */
+function durationHours(e) {
+  const sDt = parseDate(e.start_time);
+  const eDt = parseDate(e.end_time || e.start_time);
+  if (!sDt || !eDt || eDt <= sDt) return 0;
+  return (eDt - sDt) / 3600000;
+}
+
+/** 智能比较：仅今天优先 → 时长短优先 → 结束早优先 → 开始早优先 */
+function smartCompare(a, b) {
+  const sa = smartScore(a);
+  const sb = smartScore(b);
+  if (sa.statusGroup !== sb.statusGroup) return sa.statusGroup - sb.statusGroup;
+  if (sa.todayOnly !== sb.todayOnly) return sb.todayOnly - sa.todayOnly; // true(1) 排前
+  if (sa.dur !== sb.dur) return sa.dur - sb.dur;       // 时长短的排前
+  if (sa.endTs !== sb.endTs) return sa.endTs - sb.endTs; // 结束早的排前
+  return sa.startTs - sb.startTs;                       // 开始早的排前
+}
+
+function smartScore(e) {
+  const st = e.status || 'unknown';
+  const statusGroup = st === 'today' ? 1 : st === 'upcoming' ? 2 : st === 'unknown' ? 3 : 9;
+  const sDt = parseDate(e.start_time);
+  const eDt = parseDate(e.end_time || e.start_time);
+  return {
+    statusGroup,
+    todayOnly: isTodayOnly(e) ? 1 : 0,
+    dur: durationHours(e),
+    endTs: eDt ? eDt.getTime() : 9999999999999,
+    startTs: sDt ? sDt.getTime() : 9999999999999,
+  };
+}
+
 // ============ Data loading ============
 async function loadData() {
   try {
@@ -131,6 +190,7 @@ async function loadData() {
 function buildStats() {
   const total = DATA.length;
   const stCnt = countBy(DATA.map(e => e.status || 'unknown'));
+  const todayOnlyCnt = DATA.filter(e => isTodayOnly(e)).length;
   const free = DATA.filter(e => e.is_free).length;
   const cities = uniq(DATA.map(e => e.city)).length;
   const sources = uniq(DATA.map(e => e.source)).length;
@@ -141,10 +201,10 @@ function buildStats() {
 
   $('heroStats').innerHTML = [
     ['📡', total, '活动总数'],
-    ['🔥', stCnt.today || 0, '今天/进行中'],
-    ['⏰', stCnt.upcoming || 0, '即将开始'],
+    ['🔥', todayOnlyCnt, '仅今天举办'],
+    ['⏰', stCnt.today || 0, '今天/进行中'],
+    ['📌', stCnt.upcoming || 0, '即将开始'],
     ['🎁', free, '免费活动'],
-    ['🏙️', cities, '覆盖城市'],
     ['🌐', sources, '数据来源'],
   ].map(([ico, num, lbl]) => `
     <div class="hero-stat">
@@ -241,7 +301,8 @@ function applyFilter() {
   } else if (sortBy === 'title') {
     list.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
   } else {
-    list.sort((a, b) => (a.sort_key || '9_').localeCompare(b.sort_key || '9_'));
+    // 默认智能排序：仅今天 > 短时长 > 早结束 > 早开始
+    list.sort(smartCompare);
   }
 
   return list;
@@ -301,8 +362,10 @@ function renderMore() {
 function renderCard(e) {
   const poster = e.poster_local || e.poster || '';
   const st = e.status || 'unknown';
+  const todayOnly = isTodayOnly(e);
   const stBadge = STATUS_LABELS[st]
     ? `<span class="badge status-${st}">${STATUS_ICONS[st]}</span>` : '';
+  const todayOnlyBadge = todayOnly ? '<span class="badge today-only-badge">🔥仅今天</span>' : '';
   const priceBadge = e.is_free
     ? '<span class="badge free">FREE</span>'
     : (e.price_min && e.price_min >= 1
@@ -320,7 +383,10 @@ function renderCard(e) {
     ? `<img src="${esc(poster)}" alt="${esc(e.title)}" loading="lazy" onerror="this.classList.add('broken')">`
     : '';
 
-  return `<div class="card ${st}" data-uid="${esc(e.uid)}" style="animation-delay:${Math.min((rendered % PAGE_SIZE) * 20, 400)}ms">
+  const cardCls = ['card', st];
+  if (todayOnly) cardCls.push('today-only');
+
+  return `<div class="${cardCls.join(' ')}" data-uid="${esc(e.uid)}" style="animation-delay:${Math.min((rendered % PAGE_SIZE) * 20, 400)}ms">
     <div class="card-poster">
       ${posterImg}
       <div class="card-badges">
@@ -329,6 +395,7 @@ function renderCard(e) {
           ${e.city ? `<span class="badge city">${esc(e.city)}</span>` : ''}
         </div>
         <div class="badge-group">
+          ${todayOnlyBadge}
           ${relBadge}
           ${stBadge}
           ${priceBadge}
@@ -381,12 +448,14 @@ function openModal(uid) {
     posterEl.style.background = 'var(--brand-soft)';
   }
   const st = e.status || 'unknown';
+  const todayOnly = isTodayOnly(e);
   const timeStr = e.start_time
     ? `${esc(e.start_time)}${e.end_time && e.end_time !== e.start_time ? ' → ' + esc(e.end_time) : ''}`
     : (e.raw_time ? esc(e.raw_time) : '未知');
   const priceStr = e.is_free ? '🎁 免费' : (e.price || (e.price_min ? `¥${e.price_min}` : '未知'));
   $('modalBody').innerHTML = `
     <div class="modal-badges">
+      ${todayOnly ? '<span class="badge today-only-badge">🔥仅今天举办</span>' : ''}
       ${e.category ? `<span class="badge cat">${esc((CATEGORY_ICONS[e.category] || '') + ' ' + e.category)}</span>` : ''}
       ${e.city ? `<span class="badge city">${esc(e.city)}</span>` : ''}
       <span class="badge status-${st}">${STATUS_ICONS[st]} ${(STATUS_LABELS[st] || '').replace(/^[^\u4e00-\u9fa5a-zA-Z]+/, '').trim()}</span>
