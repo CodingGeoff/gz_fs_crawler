@@ -47,9 +47,13 @@ def _hm(text: str) -> list[tuple[int, int]]:
 
 def _safe_date(y, m, d, H=None, M=None) -> str:
     try:
+        iy = int(y)
+        # 年份合理性校验：防止电话号码片段（如 8888）被误判为年份
+        if iy < 2000 or iy > 2100:
+            return ""
         if H is not None:
-            return datetime(int(y), int(m), int(d), int(H), int(M)).strftime("%Y-%m-%d %H:%M")
-        return date(int(y), int(m), int(d)).strftime("%Y-%m-%d")
+            return datetime(iy, int(m), int(d), int(H), int(M)).strftime("%Y-%m-%d %H:%M")
+        return date(iy, int(m), int(d)).strftime("%Y-%m-%d")
     except (ValueError, TypeError):
         return ""
 
@@ -169,14 +173,14 @@ def parse_time_range(text: str, default_year: Optional[int] = None) -> Tuple[str
             return s, e
 
     # === 7. 兜底：纯 ISO ===
-    m = re.search(r"(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})", text)
+    m = re.search(r"(?<!\d)(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})", text)
     if m:
         s = _safe_date(m.group(1), m.group(2), m.group(3), *(t1 or (None, None)))
         if s:
             return s, ""
 
     # === 8. 兜底：MM-DD HH:MM (互动吧报名截止常用) ===
-    m = re.search(r"\b(\d{1,2})-(\d{1,2})\s+(\d{1,2}):(\d{2})\b", text)
+    m = re.search(r"(?<!\d)(\d{1,2})-(\d{1,2})\s+(\d{1,2}):(\d{2})", text)
     if m:
         mo, da, h, mi = m.groups()
         s = _safe_date(default_year, mo, da, h, mi)
@@ -359,6 +363,49 @@ def normalize_city(city: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# 内容类型检测：区分「活动」与「资讯/攻略/新闻」
+# ---------------------------------------------------------------------------
+# 强信号：标题含这些词 → 一定是列表/盘点，非单个活动
+# 注意："集合"不放入，因为"大集合"常指社交聚会而非内容合集
+_LIST_PAT = re.compile(
+    r"汇总|名单|排行榜|排行|盘点|一览|有哪些|大全|合集"
+)
+# 资讯/攻略关键词（需结合"无场地"才判定为 info）
+_INFO_PAT = re.compile(
+    r"指南|攻略|百科|常识|须知|解读|宝典|避坑|防骗|科普|问答|"
+    r"解析|评测|测评|清单|手册|教程|秘籍|秘笈|图鉴|图集|"
+    r"必看|必去|必吃|打卡|网红|好去处|地标|简介|介绍|详解|"
+    r"有哪些|一览|新闻|快讯|资讯|报道|公告|通知|声明|回应|辟谣"
+)
+
+
+def detect_content_type(e: dict) -> str:
+    """判断内容类型：'event'（活动）或 'info'（资讯/攻略/新闻）。
+
+    判定规则（保守，避免误判真实活动）：
+      1. 标题命中列表/盘点关键词（汇总/名单/排行榜/盘点…）→ info
+      2. 标题命中资讯关键词（指南/攻略/百科/推荐…）且无场地 → info
+      3. 无明确时间且无场地 → info（常青文章/新闻）
+      4. 否则 → event
+    """
+    title = e.get("title", "")
+    has_venue = bool(e.get("venue") or e.get("address"))
+    st = e.get("start_time", "")
+    has_real_time = bool(st) and "8888" not in st and "9999" not in st
+
+    # 规则 1：列表/盘点类 → 一定是资讯
+    if _LIST_PAT.search(title):
+        return "info"
+    # 规则 2：攻略/指南类 + 无场地 → 资讯
+    if _INFO_PAT.search(title) and not has_venue:
+        return "info"
+    # 规则 3：无时间无场地 → 资讯
+    if not has_real_time and not has_venue:
+        return "info"
+    return "event"
+
+
+# ---------------------------------------------------------------------------
 # 统一分类体系（解决标签 overlap 和混乱）
 # ---------------------------------------------------------------------------
 # 11 个清晰互斥的大类
@@ -530,17 +577,18 @@ def find_time_in_text(text: str, default_year: Optional[int] = None
                 return raw, s, e
 
     # 2. 无前缀，尝试在全文找任意一段时间短语（最长 60 字窗口）
+    # (?<!\d) 防止匹配电话号码中的数字片段（如 0757-28988888-11/07 → 8888-11/07）
     candidates = [
         # 2026年5月1日 10:00-11:30
-        r"\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日(?:[（(][^()）]{0,6}[)）])?(?:\s*\d{1,2}[:点]\d{2}(?:\s*[-~至到]\s*\d{1,2}[:点]\d{2})?)?",
+        r"(?<!\d)\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日(?:[（(][^()）]{0,6}[)）])?(?:\s*\d{1,2}[:点]\d{2}(?:\s*[-~至到]\s*\d{1,2}[:点]\d{2})?)?",
         # 2026年5月1-2日
-        r"\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*[-~至到]\s*\d{1,2}\s*日",
+        r"(?<!\d)\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*[-~至到]\s*\d{1,2}\s*日",
         # 2026年5月1日-5月5日
-        r"\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日\s*[-~至到]\s*\d{1,2}\s*月\s*\d{1,2}\s*日",
+        r"(?<!\d)\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日\s*[-~至到]\s*\d{1,2}\s*月\s*\d{1,2}\s*日",
         # 2026-06-03 19:30
-        r"\d{4}[-/.]\d{1,2}[-/.]\d{1,2}(?:\s*\d{1,2}[:点]\d{2})?",
+        r"(?<!\d)\d{4}[-/.]\d{1,2}[-/.]\d{1,2}(?:\s*\d{1,2}[:点]\d{2})?",
         # 5月1日 10:00
-        r"\d{1,2}\s*月\s*\d{1,2}\s*日(?:\s*\d{1,2}[:点]\d{2})?",
+        r"(?<!\d)\d{1,2}\s*月\s*\d{1,2}\s*日(?:\s*\d{1,2}[:点]\d{2})?",
     ]
     for pat in candidates:
         m = re.search(pat, text)

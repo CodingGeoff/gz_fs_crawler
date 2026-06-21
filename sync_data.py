@@ -96,7 +96,7 @@ def main():
     merged = merge_events(old_events, new_events)
 
     # 修正港澳误标（eventbrite/meetup 按 URL slug 赋 city 的问题）
-    from crawler.utils import detect_hk_macau, extract_city
+    from crawler.utils import detect_hk_macau, extract_city, detect_content_type
     fixed = 0
     for e in merged:
         text = " ".join(filter(None, [e.get("venue", ""), e.get("address", ""),
@@ -112,6 +112,16 @@ def main():
                 fixed += 1
     if fixed:
         print(f"  修正 {fixed} 条港澳误标")
+
+    # 标注内容类型（event / info）—— 资讯/攻略/新闻类降权处理
+    info_cnt = 0
+    for e in merged:
+        ct = detect_content_type(e)
+        e["content_type"] = ct
+        if ct == "info":
+            info_cnt += 1
+    if info_cnt:
+        print(f"  标注 {info_cnt} 条资讯/攻略类内容（将降权显示）")
 
     # 规范化 poster_local 路径（Windows 反斜杠 → 正斜杠，URL 友好）
     for e in merged:

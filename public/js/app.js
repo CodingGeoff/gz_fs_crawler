@@ -28,7 +28,7 @@ let filtered = [];
 let rendered = 0;
 let viewMode = 'grid';
 let sortBy = 'default';
-const filter = { status: '', cat: '', city: '', src: '', price: '' };
+const filter = { status: '', cat: '', city: '', src: '', price: '', ctype: '' };
 let query = '';
 let io = null;
 let statusSectionCount = {};
@@ -127,20 +127,24 @@ function isTodayOnly(e) {
   return isSameDay(sDt, eDt);
 }
 
-/** 活动时长（小时），越短权重越高 */
+/** 活动时长（小时），越短权重越高。
+ *  无 end_time 时返回大值（视为"时长未知/很长"），避免错误地排在短时长活动之前。
+ */
 function durationHours(e) {
   const sDt = parseDate(e.start_time);
-  const eDt = parseDate(e.end_time || e.start_time);
-  if (!sDt || !eDt || eDt <= sDt) return 0;
+  if (!sDt) return 999999;
+  const eDt = parseDate(e.end_time);
+  if (!eDt || eDt <= sDt) return 999999;  // 无 end_time 或 end<=start → 视为很长
   return (eDt - sDt) / 3600000;
 }
 
-/** 智能比较：仅今天优先 → 时长短优先 → 结束早优先 → 开始早优先 */
+/** 智能比较：仅今天优先 → 活动优先于资讯 → 时长短优先 → 结束早优先 → 开始早优先 */
 function smartCompare(a, b) {
   const sa = smartScore(a);
   const sb = smartScore(b);
   if (sa.statusGroup !== sb.statusGroup) return sa.statusGroup - sb.statusGroup;
   if (sa.todayOnly !== sb.todayOnly) return sb.todayOnly - sa.todayOnly; // true(1) 排前
+  if (sa.isInfo !== sb.isInfo) return sa.isInfo - sb.isInfo; // event(0) 排前，info(1) 排后
   if (sa.dur !== sb.dur) return sa.dur - sb.dur;       // 时长短的排前
   if (sa.endTs !== sb.endTs) return sa.endTs - sb.endTs; // 结束早的排前
   return sa.startTs - sb.startTs;                       // 开始早的排前
@@ -154,6 +158,7 @@ function smartScore(e) {
   return {
     statusGroup,
     todayOnly: isTodayOnly(e) ? 1 : 0,
+    isInfo: (e.content_type === 'info') ? 1 : 0,
     dur: durationHours(e),
     endTs: eDt ? eDt.getTime() : 9999999999999,
     startTs: sDt ? sDt.getTime() : 9999999999999,
@@ -257,6 +262,14 @@ function buildChips() {
     ['free', '🎁 免费'],
     ['paid', '💰 付费'],
   ], 'price');
+
+  const evCnt = DATA.filter(e => e.content_type !== 'info').length;
+  const infoCnt = DATA.length - evCnt;
+  setChips('chipsCtype', [
+    ['', '全部'],
+    ['event', `🎫 活动 (${evCnt})`],
+    ['info', `📰 资讯 (${infoCnt})`],
+  ], 'ctype');
 }
 
 function setChips(elId, items, group, extraCls) {
@@ -279,6 +292,8 @@ function applyFilter() {
     if (filter.src && e.source !== filter.src) return false;
     if (filter.price === 'free' && !e.is_free) return false;
     if (filter.price === 'paid' && e.is_free) return false;
+    if (filter.ctype === 'event' && e.content_type === 'info') return false;
+    if (filter.ctype === 'info' && e.content_type !== 'info') return false;
     if (ql) {
       const hay = (e.title + ' ' + e.address + ' ' + e.organizer + ' ' +
                    e.venue + ' ' + e.description + ' ' + (e.source_name || '')).toLowerCase();
@@ -363,9 +378,11 @@ function renderCard(e) {
   const poster = e.poster_local || e.poster || '';
   const st = e.status || 'unknown';
   const todayOnly = isTodayOnly(e);
+  const isInfo = e.content_type === 'info';
   const stBadge = STATUS_LABELS[st]
     ? `<span class="badge status-${st}">${STATUS_ICONS[st]}</span>` : '';
   const todayOnlyBadge = todayOnly ? '<span class="badge today-only-badge">🔥仅今天</span>' : '';
+  const infoBadge = isInfo ? '<span class="badge info-badge">📰资讯</span>' : '';
   const priceBadge = e.is_free
     ? '<span class="badge free">FREE</span>'
     : (e.price_min && e.price_min >= 1
@@ -385,6 +402,7 @@ function renderCard(e) {
 
   const cardCls = ['card', st];
   if (todayOnly) cardCls.push('today-only');
+  if (isInfo) cardCls.push('info-card');
 
   return `<div class="${cardCls.join(' ')}" data-uid="${esc(e.uid)}" style="animation-delay:${Math.min((rendered % PAGE_SIZE) * 20, 400)}ms">
     <div class="card-poster">
@@ -396,6 +414,7 @@ function renderCard(e) {
         </div>
         <div class="badge-group">
           ${todayOnlyBadge}
+          ${infoBadge}
           ${relBadge}
           ${stBadge}
           ${priceBadge}
@@ -449,6 +468,7 @@ function openModal(uid) {
   }
   const st = e.status || 'unknown';
   const todayOnly = isTodayOnly(e);
+  const isInfo = e.content_type === 'info';
   const timeStr = e.start_time
     ? `${esc(e.start_time)}${e.end_time && e.end_time !== e.start_time ? ' → ' + esc(e.end_time) : ''}`
     : (e.raw_time ? esc(e.raw_time) : '未知');
@@ -456,6 +476,7 @@ function openModal(uid) {
   $('modalBody').innerHTML = `
     <div class="modal-badges">
       ${todayOnly ? '<span class="badge today-only-badge">🔥仅今天举办</span>' : ''}
+      ${isInfo ? '<span class="badge info-badge">📰 资讯/攻略</span>' : ''}
       ${e.category ? `<span class="badge cat">${esc((CATEGORY_ICONS[e.category] || '') + ' ' + e.category)}</span>` : ''}
       ${e.city ? `<span class="badge city">${esc(e.city)}</span>` : ''}
       <span class="badge status-${st}">${STATUS_ICONS[st]} ${(STATUS_LABELS[st] || '').replace(/^[^\u4e00-\u9fa5a-zA-Z]+/, '').trim()}</span>

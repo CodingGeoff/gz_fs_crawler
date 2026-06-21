@@ -636,6 +636,11 @@ input { font-family: inherit; }
 .badge.status-upcoming { background: linear-gradient(135deg, #6366f1, #4f46e5); }
 .badge.status-archived { background: linear-gradient(135deg, #94a3b8, #64748b); }
 .badge.status-unknown { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.badge.info-badge { background: linear-gradient(135deg, #64748b, #475569); font-weight: 700; }
+
+/* 资讯/攻略类卡片：轻微半透明，降低视觉权重 */
+.card.info-card { opacity: 0.82; }
+.card.info-card:hover { opacity: 1; }
 
 .card-body {
   padding: 12px 14px 14px;
